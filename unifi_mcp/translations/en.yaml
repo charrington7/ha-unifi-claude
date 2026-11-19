@@ -1,0 +1,45 @@
+configuration:
+  router_address:
+    name: Router address
+    description: >-
+      The IP address of your UniFi gateway, for example 192.168.1.1.
+      Type only the numbers and dots, with no https and no slash.
+  router_username:
+    name: Router username
+    description: >-
+      Username of a local UniFi admin account made just for Claude.
+      Do not use your Ubiquiti cloud account, and the account must not have two-factor sign-in.
+  router_password:
+    name: Router password
+    description: Password for that local UniFi account. It is stored only on your Home Assistant Green.
+  router_port:
+    name: Router port
+    description: Leave at 443 unless you know your UniFi console uses a different port.
+  site_name:
+    name: Site name
+    description: Leave as default unless you have renamed your UniFi site.
+  check_router_certificate:
+    name: Check router certificate
+    description: >-
+      Leave off. UniFi gateways use a self-signed certificate, so turning this on
+      usually stops the connection.
+  allow_changes:
+    name: Allow Claude to make changes
+    description: >-
+      Off means Claude can only look at your network. On lets Claude make changes,
+      such as creating networks or firewall rules, but every change is shown to you
+      first and needs your confirmation before it is applied.
+  relay_address:
+    name: Relay address
+    description: >-
+      The web address of your private Cloudflare relay, starting with https.
+      Leave empty while testing; Claude cannot reach the app until this is filled in.
+  relay_token:
+    name: Relay token
+    description: The location token the relay setup gave you. Not the agent token.
+  location_name:
+    name: Location name
+    description: A friendly name for this home, shown to Claude. Home is fine.
+  detailed_logs:
+    name: Detailed logs
+    description: Turn on only when troubleshooting. Makes the log much longer.
