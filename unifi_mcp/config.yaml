@@ -1,0 +1,39 @@
+name: UniFi Network for Claude
+version: "1.3.0"
+slug: unifi_mcp
+description: >-
+  Lets Claude read and, if you allow it, manage your UniFi network.
+  Connects out to your private relay, so no ports are opened on your network.
+url: https://github.com/sirkirby/unifi-mcp
+arch:
+  - aarch64
+  - amd64
+init: true
+startup: application
+boot: auto
+# No ports, no host network, no access to Home Assistant itself.
+# The server listens only inside this app, on 127.0.0.1.
+options:
+  router_address: ""
+  router_username: ""
+  router_password: ""
+  router_port: 443
+  site_name: default
+  check_router_certificate: false
+  allow_changes: false
+  relay_address: ""
+  relay_token: ""
+  location_name: Home
+  detailed_logs: false
+schema:
+  router_address: str
+  router_username: str
+  router_password: password
+  router_port: port
+  site_name: str
+  check_router_certificate: bool
+  allow_changes: bool
+  relay_address: str?
+  relay_token: password?
+  location_name: str
+  detailed_logs: bool
